@@ -1,0 +1,51 @@
+{
+  "name": "sg-hdb-building-layer-in-3D-offline",
+  "version": "1.0.0",
+  "description": "Setup NodeJS API server with Express Router and Stream Basemap Tiles.",
+  "author": {
+    "name": "Charmaine Chui",
+    "url": "https://geek-cc.medium.com/"
+  },
+  "keywords": [
+    "express",
+    "stream",
+    "webpack",
+    "fs"
+  ],
+  "main": "src/server/index.js",
+  "scripts": {
+    "build": "rimraf dist && cross-env webpack",
+    "start": "node src/server/index.js"
+  },
+  "devDependencies": {
+    "css-loader": "^6.5.1",
+    "css-minimizer-webpack-plugin": "^3.2.0",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "image-webpack-loader": "^8.0.1",
+    "mini-css-extract-plugin": "^2.4.5",
+    "regenerator-runtime": "^0.13.9",
+    "rimraf": "^3.0.2",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.64.4",
+    "webpack-cli": "^4.9.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "chalk": "^4.1.2",
+    "compression": "^1.7.4",
+    "cross-env": "^7.0.3",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "install": "^0.13.0",
+    "maptalks": "^1.0.0-beta.7",
+    "npm": "^8.2.0",
+    "openurl": "^1.1.1",
+    "request": "^2.88.2",
+    "terser-webpack-plugin": "^5.2.5",
+    "three": "^0.135.0",
+    "url-loader": "^4.1.1",
+    "webpack-dev-middleware": "^5.2.2",
+    "webpack-hot-middleware": "^2.25.1"
+  }
+}
