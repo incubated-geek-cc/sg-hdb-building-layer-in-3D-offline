@@ -2,9 +2,7 @@ const path = require('path');
 const express= require('express');
 const app = express();
 
-const HOSTNAME = 'localhost';
-const PORT = process.env.PORT || 9000;
-const ORIGIN = process.env.ORIGIN;
+const port = process.env.PORT || 9000;
 
 const webpack= require('webpack');
 const webpackconfig = require('../../webpack.config.js');
@@ -12,11 +10,8 @@ const webpackconfig = require('../../webpack.config.js');
 const buildDir = '../../dist/';
 
 const fs = require('fs');
-const request = require('request').defaults({ encoding: null });
 const bodyParser = require('body-parser');
 const compression = require('compression');
-
-const chalk = require('chalk');
 
 app.use(compression());
 app.use(express.static(path.join(__dirname, buildDir)));
@@ -25,7 +20,7 @@ var router = express.Router();
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.json()); 
 router.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', ORIGIN || '*');
+    res.header('Access-Control-Allow-Origin');
     next();
 });
 
@@ -59,7 +54,7 @@ router.get('/basemap/light_all/:zoom/:x/:tilename', (req, res) => {
 router.get('/data/json/:filename', (req, res) => {
   const filename=req.params.filename;
   const filepathToStream=path.join(__dirname, buildDir, `asset/data/${filename}.json`)
-  
+
   fs.readFile(filepathToStream, (_err, _data) => {
     if(_err) console.log(_err)
     var textContent=_data.toString('utf8');
@@ -69,10 +64,6 @@ router.get('/data/json/:filename', (req, res) => {
 
 app.use('/api', router);
 
-app.listen( PORT, HOSTNAME, () => console.log(`
-    =====================================================
-    -> Server (${chalk.bgBlue('SPA')}) 🏃  (running) on ${chalk.green(HOSTNAME)}:${chalk.green(PORT)}
-    =====================================================
-  `)
-);
-require('openurl').open(`http://${HOSTNAME}:${PORT}`);
+app.listen(port, () => {
+  console.log(`App listening on port ${port}!`)
+});
