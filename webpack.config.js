@@ -101,7 +101,7 @@ module.exports = {
         new webpack.optimize.ModuleConcatenationPlugin(),
         new CopyWebpackPlugin({
             patterns: [
-                { from: path.resolve(__dirname, resourceDir), to: 'asset' }
+                { from: path.resolve(__dirname, resourceDir), to: path.join(buildDir,'asset') }
             ]
         }),    
         new webpack.DefinePlugin({
