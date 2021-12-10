@@ -145,6 +145,8 @@ const jsonObjToHTMLTable = (featureProps) => {
     return htmlStr;
 };
 
+// var t=null;
+
 var response;
 async function init() {
     response=await fetch('asset/data/geocoders.json');
@@ -286,37 +288,35 @@ async function init() {
         });
       }
     });
-}
 
-var t=null;
-function panMapReady() {
-    t=setInterval(() => {
-         map.animateTo({
-            center: [lngCounter,latCounter],
-            zoom: zoomCounter,
-            pitch: defaultPitch,
-            bearing: defaultBearing
-        }, {
-            duration: 2000
-        });
+    // function panMapReady() {
+    //     t=setInterval(() => {
+    //          map.animateTo({
+    //             center: [lngCounter,latCounter],
+    //             zoom: zoomCounter,
+    //             pitch: defaultPitch,
+    //             bearing: defaultBearing
+    //         }, {
+    //             duration: 2000
+    //         });
 
-        latCounter+=0.01;
-        
-        if(latCounter>endLat) {
-            lngCounter+=0.05;
-            latCounter=startLat;
-            if(lngCounter>endLng) {
-                zoomCounter++;
-                lngCounter=startLng;
-                if(zoomCounter>maxZoom) {
-                    clearInterval(t);
-                    alert('DONE!');
-                }
-            }
-        }
-        console.log([lngCounter, latCounter]);
-    }, 10000);
+    //         latCounter+=0.01;
+            
+    //         if(latCounter>endLat) {
+    //             lngCounter+=0.05;
+    //             latCounter=startLat;
+    //             if(lngCounter>endLng) {
+    //                 zoomCounter++;
+    //                 lngCounter=startLng;
+    //                 if(zoomCounter>maxZoom) {
+    //                     clearInterval(t);
+    //                     alert('DONE!');
+    //                 }
+    //             }
+    //         }
+    //         console.log([lngCounter, latCounter]);
+    //     }, 10000);
+    // }
+    loading_gif.style.display='none';
 }
 init();
-loading_gif.style.display='none';
-panMapReady();
