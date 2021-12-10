@@ -1,5 +1,5 @@
-import 'css/maptalks.css';
-const maptalks = require('js/maptalks.js');
+import 'asset/css/maptalks.css';
+const maptalks = require('asset/js/maptalks.js');
 const THREE = require('three');
 const { 
     BaseObject,
@@ -14,10 +14,10 @@ const {
     ThreeLayer,
     ThreeRenderer,
     geometryExtrude
-} = require('js/maptalks.three.js');
+} = require('asset/js/maptalks.three.js');
 
-const autoComplete=require('js/autoComplete.js');
-import 'css/main.css';
+const autoComplete=require('asset/js/autoComplete.js');
+import 'asset/css/main.css';
 
 const startLat = 1.22557;
 const startLng = 103.67592;
