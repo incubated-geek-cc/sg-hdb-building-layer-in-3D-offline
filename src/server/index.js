@@ -3,10 +3,6 @@ const express= require('express');
 const app = express();
 
 const port = process.env.PORT || 9000;
-
-const webpack= require('webpack');
-const webpackconfig = require('../../webpack.config.js');
-
 const buildDir = '../../dist/';
 
 const fs = require('fs');

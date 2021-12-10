@@ -177,7 +177,7 @@ async function init() {
         dragRotatePitch : true,
         fullExtent: mapExtent,
         baseLayer: new maptalks.TileLayer('base', {
-          urlTemplate: window.location.origin+'/api/basemap/light_all/{z}/{x}/{y}.png',
+          urlTemplate: 'asset/basemap/light_all/{z}/{x}/{y}.png',
           attribution: '<div class=\'custom-attribution\'><p>Rendered with <a href=\'http://maptalks.org\' target=\'_blank\'>maptalks</a> | © <a href=\'http://www.openstreetmap.org/copyright\' target=\'_blank\'>OpenStreetMap</a> contributors, © <a href=\'https://carto.com/attributions\' target=\'_blank\'>CARTO</a></p></div>'
         })
     });

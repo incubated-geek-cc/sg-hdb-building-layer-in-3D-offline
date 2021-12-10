@@ -37,8 +37,10 @@
     "express": "^4.17.1",
     "install": "^0.13.0",
     "maptalks": "^1.0.0-beta.7",
+    "netlify-lambda": "^2.0.15",
     "npm": "^8.2.0",
     "request": "^2.88.2",
+    "serverless-http": "^2.7.0",
     "terser-webpack-plugin": "^5.2.5",
     "three": "^0.135.0",
     "url-loader": "^4.1.1"
