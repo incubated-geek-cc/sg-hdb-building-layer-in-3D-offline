@@ -147,10 +147,10 @@ const jsonObjToHTMLTable = (featureProps) => {
 
 var response;
 async function init() {
-    response=await fetch('api/data/json/geocoders');
+    response=await fetch('asset/data/geocoders.json');
     geocoders=await response.json();
 
-    response=await fetch('api/data/json/hdb_building_polygons');
+    response=await fetch('asset/data/hdb_building_polygons.json');
     var hdb_building_polygons=await response.json();
     features=hdb_building_polygons.features;
 
