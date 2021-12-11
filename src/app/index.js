@@ -2,18 +2,7 @@ import 'asset/css/maptalks.css';
 const maptalks = require('asset/js/maptalks.js');
 const THREE = require('three');
 const { 
-    BaseObject,
-    ExtrudeUtil,
-    GeoJSONUtil,
-    GeoUtil,
-    IdentifyUtil,
-    LineMaterial,
-    LineUtil,
-    MergeGeometryUtil,
-    MergedMixin,
-    ThreeLayer,
-    ThreeRenderer,
-    geometryExtrude
+    ThreeLayer
 } = require('asset/js/maptalks.three.js');
 
 const autoComplete=require('asset/js/autoComplete.js');
